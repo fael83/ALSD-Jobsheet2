@@ -5,17 +5,11 @@ public class Mahasiswa13 {
     String nim;
     String kelas;
     double ipk;
-    public Mahasiswa13(String name,String Nim, String kls, double IPK){
-        nama = name;
-        nim = Nim;
-        kelas = kls;
-        ipk = IPK;
-    }
     void tampilkanInformasi(){
         System.out.println("Nama: " + nama);
         System.out.println("NIM: "+ nim);
-        System.out.println("Kelas: " + kelas);
         System.out.println("IPK: " + ipk);
+        System.out.println("Kelas: " + kelas);
     }
     void ubahKelas(String kelasBaru){
         kelas = kelasBaru;
@@ -40,7 +34,11 @@ public class Mahasiswa13 {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Mahasiswa13 mhs = new Mahasiswa13("Rafael", "244107060039","SIB - 1G", 3.6);
+        Mahasiswa13 mhs = new Mahasiswa13();
+        mhs.nama = "Rafael";
+        mhs.nim = "244107060039";
+        mhs.kelas = "SIB 1G";
+        mhs.ipk = 3.6;
         mhs.tampilkanInformasi();
         System.out.print("Apakah anda ingin memasukkan ipk baru? (y/n):" );
         String kepastian = sc.next();
@@ -50,7 +48,11 @@ public class Mahasiswa13 {
             if (ipkBaru <= 0.0 || ipkBaru >= 4.0) {
                 mhs.updateIPK(ipkBaru);
             }else {
-                Mahasiswa13 mhsBaru = new Mahasiswa13("Rafael", "244107060039","SIB - 1G", ipkBaru);
+                Mahasiswa13 mhsBaru = new Mahasiswa13();
+                mhsBaru.nama = "Rafael";
+                mhsBaru.nim = "244107060039";
+                mhsBaru.kelas = "SIB 1G";
+                mhsBaru.ipk = ipkBaru;
                 mhsBaru.tampilkanInformasi();
             }
         }
